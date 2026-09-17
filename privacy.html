@@ -3,18 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>차기둥 개인정보처리방침 | Palimpsest</title>
+    <title>개인정보처리방침 | Palimpsest</title>
     <link rel="stylesheet" href="/style.css">
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.7; color: #2C3E50; background: #FAFAFA; }
         h1 { color: #5E35B1; border-bottom: 2px solid #5E35B1; padding-bottom: 10px; }
         h2 { color: #2C3E50; margin-top: 30px; }
+        h3 { color: #2C3E50; margin-top: 24px; }
         ul { padding-left: 20px; }
         a { color: #5E35B1; }
         hr { margin: 40px 0; border: none; border-top: 1px solid #ddd; }
         .nav { margin-bottom: 30px; }
         .nav a { margin-right: 15px; text-decoration: none; }
         .footer { margin-top: 40px; color: #888; font-size: 14px; text-align: center; }
+
+        /* 앱 선택 탭 */
+        .app-tabs {
+            display: flex;
+            gap: 8px;
+            margin: 30px 0 40px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .app-tab {
+            padding: 12px 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 16px;
+            font-weight: 500;
+            color: #888;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -1px;
+            transition: all 0.2s;
+        }
+        .app-tab:hover { color: #5E35B1; }
+        .app-tab.active {
+            color: #5E35B1;
+            border-bottom-color: #5E35B1;
+        }
+
+        /* 앱 콘텐츠 */
+        .app-content { display: none; }
+        .app-content.active { display: block; }
+
+        /* 우리쉬는날 전용 색상 포인트 */
+        .app-content[data-app="woori"] h2 {
+            color: #A8C3A0;
+        }
+        .app-content[data-app="woori"] a {
+            color: #8BA888;
+        }
+        .app-content[data-app="woori"] .updated {
+            color: #5A5A55;
+        }
     </style>
 </head>
 <body>
@@ -25,58 +66,162 @@
         <a href="/#contact">문의</a>
     </div>
 
-    <h1>차기둥(ChaGidung) 개인정보처리방침</h1>
-    <p><strong>최종 수정일:</strong> 2026년 9월 15일</p>
+    <h1>개인정보처리방침</h1>
+    <p>팔림프세스트(Palimpsest)가 개발한 앱의 개인정보처리방침입니다.</p>
 
-    <h2>1. 개요</h2>
-    <p>차기둥(ChaGidung) 앱(이하 "본 앱")은 팔림프세스트(Palimpsest)가 개발하였으며, 사용자의 개인정보를 소중히 여기고 관련 법령을 준수합니다. 본 방침은 본 앱이 어떤 정보를 수집하고 어떻게 사용하는지 설명합니다.</p>
+    <!-- ⭐ 앱 선택 탭 -->
+    <div class="app-tabs">
+        <button class="app-tab active" data-target="chagidung">차기둥</button>
+        <button class="app-tab" data-target="woori">우리쉬는날</button>
+    </div>
 
-    <h2>2. 수집하는 정보</h2>
-    <p>본 앱은 사용자의 개인정보를 직접 수집하지 않습니다.</p>
-    <ul>
-        <li>이름, 이메일, 전화번호 등 개인 식별 정보: 수집하지 않음</li>
-        <li>주차 위치 정보: 사용자 기기 내부에만 저장 (외부 전송 없음)</li>
-    </ul>
+    <!-- ================================================== -->
+    <!-- 차기둥 -->
+    <!-- ================================================== -->
+    <div class="app-content active" data-app="chagidung" id="chagidung">
+        <h1>차기둥(ChaGidung) 개인정보처리방침</h1>
+        <p><strong>최종 수정일:</strong> 2026년 9월 15일</p>
 
-    <h2>3. 사용 권한</h2>
-    <p>본 앱은 다음 권한을 사용합니다:</p>
-    <ul>
-        <li><strong>카메라:</strong> 주차장 기둥 번호 촬영 및 OCR 인식</li>
-        <li><strong>알림:</strong> 상단 알림바에 주차 위치 표시</li>
-        <li><strong>저장공간(선택):</strong> 촬영한 사진을 갤러리에 저장</li>
-    </ul>
+        <h2>1. 개요</h2>
+        <p>차기둥(ChaGidung) 앱(이하 "본 앱")은 팔림프세스트(Palimpsest)가 개발하였으며, 사용자의 개인정보를 소중히 여기고 관련 법령을 준수합니다. 본 방침은 본 앱이 어떤 정보를 수집하고 어떻게 사용하는지 설명합니다.</p>
 
-    <h2>4. 데이터 저장 및 보안</h2>
-    <ul>
-        <li>모든 데이터는 사용자 기기 내부에만 저장됩니다.</li>
-        <li>데이터는 AES256 암호화되어 저장됩니다.</li>
-        <li>외부 서버로 전송되지 않습니다.</li>
-    </ul>
+        <h2>2. 수집하는 정보</h2>
+        <p>본 앱은 사용자의 개인정보를 직접 수집하지 않습니다.</p>
+        <ul>
+            <li>이름, 이메일, 전화번호 등 개인 식별 정보: 수집하지 않음</li>
+            <li>주차 위치 정보: 사용자 기기 내부에만 저장 (외부 전송 없음)</li>
+        </ul>
 
-    <h2>5. 제3자 서비스 (광고)</h2>
-    <p>본 앱은 Google AdMob 광고를 포함합니다. AdMob은 광고 게재를 위해 다음 정보를 수집할 수 있습니다:</p>
-    <ul>
-        <li>광고 식별자</li>
-        <li>기기 정보</li>
-        <li>대략적인 위치</li>
-        <li>앱 상호작용 데이터</li>
-    </ul>
-    <p>AdMob 개인정보처리방침: <a href="https://policies.google.com/technologies/ads" target="_blank">https://policies.google.com/technologies/ads</a></p>
+        <h2>3. 사용 권한</h2>
+        <p>본 앱은 다음 권한을 사용합니다:</p>
+        <ul>
+            <li><strong>카메라:</strong> 주차장 기둥 번호 촬영 및 OCR 인식</li>
+            <li><strong>알림:</strong> 상단 알림바에 주차 위치 표시</li>
+            <li><strong>저장공간(선택):</strong> 촬영한 사진을 갤러리에 저장</li>
+        </ul>
 
-    <h2>6. 아동 개인정보</h2>
-    <p>본 앱은 만 14세 미만 아동의 개인정보를 수집하지 않습니다.</p>
+        <h2>4. 데이터 저장 및 보안</h2>
+        <ul>
+            <li>모든 데이터는 사용자 기기 내부에만 저장됩니다.</li>
+            <li>데이터는 AES256 암호화되어 저장됩니다.</li>
+            <li>외부 서버로 전송되지 않습니다.</li>
+        </ul>
 
-    <h2>7. 방침 변경</h2>
-    <p>본 방침은 변경될 수 있으며, 변경 시 앱 내 공지합니다.</p>
+        <h2>5. 제3자 서비스 (광고)</h2>
+        <p>본 앱은 Google AdMob 광고를 포함합니다. AdMob은 광고 게재를 위해 다음 정보를 수집할 수 있습니다:</p>
+        <ul>
+            <li>광고 식별자</li>
+            <li>기기 정보</li>
+            <li>대략적인 위치</li>
+            <li>앱 상호작용 데이터</li>
+        </ul>
+        <p>AdMob 개인정보처리방침: <a href="https://policies.google.com/technologies/ads" target="_blank">https://policies.google.com/technologies/ads</a></p>
 
-    <h2>8. 문의</h2>
-    <p>이메일: <a href="mailto:gllma21c@gmail.com">gllma21c@gmail.com</a></p>
+        <h2>6. 아동 개인정보</h2>
+        <p>본 앱은 만 14세 미만 아동의 개인정보를 수집하지 않습니다.</p>
 
-    <hr>
-    <p><em>본 앱을 사용함으로써 본 개인정보처리방침에 동의하는 것으로 간주됩니다.</em></p>
+        <h2>7. 방침 변경</h2>
+        <p>본 방침은 변경될 수 있으며, 변경 시 앱 내 공지합니다.</p>
+
+        <h2>8. 문의</h2>
+        <p>이메일: <a href="mailto:gllma21c@gmail.com">gllma21c@gmail.com</a></p>
+
+        <hr>
+        <p><em>본 앱을 사용함으로써 본 개인정보처리방침에 동의하는 것으로 간주됩니다.</em></p>
+    </div>
+
+    <!-- ================================================== -->
+    <!-- 우리쉬는날 -->
+    <!-- ================================================== -->
+    <div class="app-content" data-app="woori" id="woori">
+        <h1>우리쉬는날 개인정보처리방침</h1>
+        <p><strong>최종 수정일:</strong> 2026년 9월 18일</p>
+
+        <h2>1. 개요</h2>
+        <p>우리쉬는날 앱(이하 "본 앱")은 팔림프세스트(Palimpsest)가 개발한 교대근무자용 캘린더 앱입니다. 본 앱은 사용자의 개인정보를 소중히 여기고 관련 법령을 준수합니다. 본 방침은 본 앱이 어떤 정보를 수집하고 어떻게 사용하는지 설명합니다.</p>
+
+        <h2>2. 수집하는 정보</h2>
+        <p>본 앱은 사용자의 개인정보를 직접 수집하지 않습니다.</p>
+        <ul>
+            <li>이름, 이메일, 전화번호 등 개인 식별 정보: 수집하지 않음</li>
+            <li>근무 패턴, 근무 시작일, 개별 날짜 수정 내역: 사용자 기기 내부에만 저장 (외부 전송 없음)</li>
+            <li>앱 설정 (다크모드, 접근성 모드 등): 사용자 기기 내부에만 저장</li>
+        </ul>
+
+        <h2>3. 사용 권한</h2>
+        <p>본 앱은 다음 권한을 사용합니다:</p>
+        <ul>
+            <li><strong>알림(선택):</strong> 근무별 알람 (주간/야간 등)</li>
+            <li><strong>저장공간(선택):</strong> 쉬는 날 이미지를 공유하기 위한 임시 저장</li>
+        </ul>
+
+        <h2>4. 데이터 저장 및 보안</h2>
+        <ul>
+            <li>모든 데이터는 사용자 기기 내부에만 저장됩니다.</li>
+            <li>외부 서버로 전송되지 않습니다.</li>
+            <li>서버를 운영하지 않으므로 클라우드 백업 기능이 없습니다.</li>
+            <li>앱 삭제 시 모든 로컬 데이터가 함께 삭제됩니다.</li>
+        </ul>
+
+        <h2>5. 제3자 서비스 (광고)</h2>
+        <p>본 앱은 Google AdMob 광고를 포함합니다. AdMob은 광고 게재를 위해 다음 정보를 수집할 수 있습니다:</p>
+        <ul>
+            <li>광고 식별자</li>
+            <li>기기 정보</li>
+            <li>대략적인 위치</li>
+            <li>앱 상호작용 데이터</li>
+        </ul>
+        <p>AdMob 개인정보처리방침: <a href="https://policies.google.com/technologies/ads" target="_blank">https://policies.google.com/technologies/ads</a></p>
+
+        <h2>6. 이미지 공유 기능</h2>
+        <p>본 앱의 "쉬는 날 공유" 기능은 사용자가 생성한 이미지를 카카오톡, 문자 등 외부 앱으로 전송합니다. 이 과정에서 본 앱은 이미지를 서버에 저장하거나 수집하지 않으며, 공유는 사용자의 기기에서 시스템 공유 기능을 통해 이루어집니다.</p>
+
+        <h2>7. 아동 개인정보</h2>
+        <p>본 앱은 만 14세 미만 아동의 개인정보를 수집하지 않습니다.</p>
+
+        <h2>8. 방침 변경</h2>
+        <p>본 방침은 변경될 수 있으며, 변경 시 앱 내 공지합니다.</p>
+
+        <h2>9. 문의</h2>
+        <p>이메일: <a href="mailto:gllma21c@gmail.com">gllma21c@gmail.com</a></p>
+
+        <hr>
+        <p><em>본 앱을 사용함으로써 본 개인정보처리방침에 동의하는 것으로 간주됩니다.</em></p>
+    </div>
 
     <div class="footer">
         © 2026 Palimpsest. All rights reserved.
     </div>
+
+    <!-- ⭐ 탭 전환 스크립트 -->
+    <script>
+        const tabs = document.querySelectorAll('.app-tab');
+        const contents = document.querySelectorAll('.app-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.dataset.target;
+
+                // 탭 활성화
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // 콘텐츠 전환
+                contents.forEach(c => {
+                    c.classList.toggle('active', c.dataset.app === target);
+                });
+
+                // URL 해시 업데이트 (딥링크 지원)
+                history.replaceState(null, '', '#' + target);
+            });
+        });
+
+        // URL 해시로 초기 탭 결정
+        const hash = window.location.hash.replace('#', '');
+        if (hash === 'woori' || hash === 'chagidung') {
+            const targetTab = document.querySelector(`.app-tab[data-target="${hash}"]`);
+            if (targetTab) targetTab.click();
+        }
+    </script>
 </body>
 </html>
